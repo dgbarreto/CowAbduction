@@ -6,6 +6,8 @@ public class Alien : MonoBehaviour {
     private Rigidbody2D rb;
     private SpriteRenderer sr;
     private Transform t;
+    public float PullSpeed = 5.0f;
+    public float Gravity = 1.0f;
 
     void Start() {
         rb = GetComponent<Rigidbody2D>();
@@ -16,7 +18,8 @@ public class Alien : MonoBehaviour {
     // Update is called once per frame
     void Update() {
         if (Input.GetButton("Jump")) {
-            rb.velocity = new Vector2(0.0f, -5.0f);
+            rb.velocity = new Vector2(0.0f, -PullSpeed);
+            rb.gravityScale = -Gravity;
             sr.color = Color.white;
         }
     }
@@ -31,16 +34,6 @@ public class Alien : MonoBehaviour {
             float moveX = Input.GetAxis("Horizontal") * -50.0f * Time.deltaTime;
             t.Translate(moveX, 0.0f, 0.0f);
             print("Collision Wall Y");
-        }
-
-        Collider2D[] colliders = new Collider2D[] { };
-        collision.GetContacts(colliders);
-
-        foreach (Collider2D contact in colliders) {
-            //print(contact..name + " hit " + contact.otherCollider.name);
-            // Visualize the contact point
-            Debug.DrawRay(contact.transform.localPosition, contact.transform.localPosition, Color.white);
-
         }
     }
 }
