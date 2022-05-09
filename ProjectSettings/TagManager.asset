@@ -6,6 +6,8 @@ TagManager:
   tags:
   - WallY
   - WallX
+  - Obstacle
+  - Ship
   layers:
   - Default
   - TransparentFX

@@ -6,7 +6,8 @@ public class Player : MonoBehaviour {
     public float Speed = 2.0f;
 
     void Update() {
-        float moveX = Input.GetAxis("Horizontal") * Speed * Time.deltaTime;
+        //float moveX = Input.GetAxis("Horizontal") * Speed * Time.deltaTime;
+        float moveX = Input.acceleration.x * Speed * Time.deltaTime;
         transform.Translate(moveX, 0.0f, 0.0f);
     }
 }

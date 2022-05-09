@@ -1,13 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.1.32414.318
-MinimumVisualStudioVersion = 10.0.40219.1
+# Visual Studio 15
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{CAEF4A12-D907-59C8-940E-2049478401E9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{CB22919B-B5E4-4636-AB36-B1B4AC74ACDE}"
 	ProjectSection(SolutionItems) = preProject
-		,gitignore.txt = ,gitignore.txt
+		.gitignore = .gitignore
 	EndProjectSection
 EndProject
 Global
@@ -23,8 +21,5 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {8D95F9FA-F853-4275-9F3E-F77A7AA97DBF}
 	EndGlobalSection
 EndGlobal

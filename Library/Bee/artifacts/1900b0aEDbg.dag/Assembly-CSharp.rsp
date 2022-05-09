@@ -382,6 +382,7 @@
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/UnityEngine.UI.ref.dll"
 "Assets/Scripts/Alien.cs"
 "Assets/Scripts/Player.cs"
+"Assets/Scripts/Scenes.cs"
 -langversion:9.0
 
 /deterministic
