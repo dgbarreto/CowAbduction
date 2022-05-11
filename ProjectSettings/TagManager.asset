@@ -8,6 +8,8 @@ TagManager:
   - WallX
   - Obstacle
   - Ship
+  - Wall
+  - Ceiling
   layers:
   - Default
   - TransparentFX
@@ -50,4 +52,7 @@ TagManager:
     locked: 0
   - name: Foreground
     uniqueID: 3074066421
+    locked: 0
+  - name: Foreground 2
+    uniqueID: 1818742789
     locked: 0

@@ -381,6 +381,7 @@
 -r:"Library/Bee/artifacts/1300b0aEDbg.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aEDbg.dag/UnityEngine.UI.ref.dll"
 "Assets/Scripts/Alien.cs"
+"Assets/Scripts/GameState.cs"
 "Assets/Scripts/Player.cs"
 "Assets/Scripts/Replay.cs"
 "Assets/Scripts/Scenes.cs"
