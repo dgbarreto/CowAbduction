@@ -1,4 +1,0 @@
-#Fri May 06 17:05:59 BRT 2022
-base.0=E\:\\Repo\\CowAbduction\\CowAbduction\\Library\\Bee\\Android\\Prj\\Mono2x\\Gradle\\launcher\\build\\intermediates\\dex\\release\\mergeDexRelease\\classes.dex
-path.0=classes.dex
-renamed.0=classes.dex

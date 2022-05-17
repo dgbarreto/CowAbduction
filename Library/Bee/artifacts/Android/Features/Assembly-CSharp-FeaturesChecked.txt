@@ -1,2 +1,0 @@
-UnityEngine.Input::get_acceleration
-UnityEngine.Input::get_touches
