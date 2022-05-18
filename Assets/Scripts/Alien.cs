@@ -23,6 +23,7 @@ public class Alien : MonoBehaviour {
     //public float moveX;
     private GameObject parent;
     private AudioSource audioHit;
+    private bool isInvincible = false;
 
     void Start() {
         rb = GetComponent<Rigidbody2D>();
@@ -68,21 +69,28 @@ public class Alien : MonoBehaviour {
         if (collision.tag == OBSTACLE || collision.tag == WALL) {
             //Destroy(gameObject);
             //SceneManager.LoadScene(Scenes.LOSE);
-            animator.enabled = false;
-
-            StartCoroutine(BlinkGameObject(3.0f));
-            animator.enabled = true;
             parent.transform.Translate(-Input.GetAxis("Horizontal") * 200.0f * Time.deltaTime, 0.0f, 0.0f);
-            audioHit.Play();
+
+            if (!isInvincible) {
+                animator.enabled = false;
+                StartCoroutine(BlinkGameObject(3.0f));
+                animator.enabled = true;
+                audioHit.Play();
+                removeOneLifePoint();
+            }
         }
         else if(collision.tag == CEILING) {
-            animator.enabled = false;
-            StartCoroutine(BlinkGameObject(3.0f));
-            animator.enabled = true;
             rb.velocity = new Vector2(0.0f, -PullSpeed * 2.0f);
             rb.gravityScale = -Gravity;
-            sr.color = Color.white;
-            audioHit.Play();
+
+            if (!isInvincible) {
+                animator.enabled = false;
+                StartCoroutine(BlinkGameObject(3.0f));
+                animator.enabled = true;
+                sr.color = Color.white;
+                audioHit.Play();
+                removeOneLifePoint();
+            }
         }
         else if (collision.tag == SHIP) {
             SceneManager.LoadScene(Scenes.WIN);
@@ -101,7 +109,19 @@ public class Alien : MonoBehaviour {
         //}
     }
 
+    private void removeOneLifePoint() {
+        GameObject lifeGauge = GameObject.Find("Life");
+        if(lifeGauge != null) {
+            Life lifeScript = lifeGauge.GetComponent<Life>();
+            if (!lifeScript.removeOneLifePoint()) {
+                Destroy(gameObject);
+                SceneManager.LoadScene("Lose");
+            }
+        }
+    }
+
     IEnumerator BlinkGameObject(float seconds) {
+        isInvincible = true;
         DateTime dt = DateTime.Now.AddSeconds(seconds);
 
         while (DateTime.Now <= dt) {
@@ -112,5 +132,6 @@ public class Alien : MonoBehaviour {
         }
 
         spriteRenderer.enabled = true;
+        isInvincible = false;
     }
 }

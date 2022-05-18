@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 namespace Assets.Scripts {
     internal sealed class GameState {
         private static GameState _instance;
+        private int _lives = 3;
 
         public static GameState Shared() {
             if(_instance == null) {
@@ -22,5 +23,9 @@ namespace Assets.Scripts {
         }
 
         public eGameState State { get; set; }
+        public int BaseLives {
+            get { return _lives; }
+            set { _lives = value; }
+        }
     }
 }
