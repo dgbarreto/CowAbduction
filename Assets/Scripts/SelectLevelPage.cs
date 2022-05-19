@@ -9,4 +9,9 @@ public class SelectLevelPage : MonoBehaviour
   {
     SceneManager.LoadScene(Scenes.START);
   }
+
+  public void SelectLevel()
+  {
+    SceneManager.LoadScene(Scenes.LEVEL);
+  }
 }

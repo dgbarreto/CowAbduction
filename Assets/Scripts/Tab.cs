@@ -6,7 +6,7 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 [RequireComponent(typeof(Image))]
-public class TabButton : MonoBehaviour, IPointerEnterHandler, IPointerClickHandler, IPointerExitHandler
+public class Tab : MonoBehaviour, IPointerEnterHandler, IPointerClickHandler, IPointerExitHandler
 {
   public TabGroup tabGroup;
   public Sprite tabIdle;
@@ -36,15 +36,18 @@ public class TabButton : MonoBehaviour, IPointerEnterHandler, IPointerClickHandl
     tabGroup.OnTabEnter(this);
   }
 
-  public void SetIdle() {
-      this.background.sprite = tabIdle;
+  public void SetIdle()
+  {
+    this.background.sprite = tabIdle;
   }
 
-  public void SetActive() {
-      this.background.sprite = tabActive;
+  public void SetActive()
+  {
+    this.background.sprite = tabActive;
   }
 
-  public void SetHover() {
-      this.background.sprite = tabHover;
+  public void SetHover()
+  {
+    this.background.sprite = tabHover;
   }
 }

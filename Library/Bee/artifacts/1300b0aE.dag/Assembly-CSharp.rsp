@@ -392,7 +392,7 @@
 "Assets/Scripts/Scenes.cs"
 "Assets/Scripts/SelectLevelPage.cs"
 "Assets/Scripts/StartPage.cs"
-"Assets/Scripts/TabButton.cs"
+"Assets/Scripts/Tab.cs"
 "Assets/Scripts/TabGroup.cs"
 -langversion:9.0
 
