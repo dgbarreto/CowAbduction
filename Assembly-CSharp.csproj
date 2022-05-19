@@ -46,6 +46,8 @@
      <Compile Include="Assets\Scripts\GameState.cs" />
      <Compile Include="Assets\Scripts\SelectLevelPage.cs" />
      <Compile Include="Assets\Scripts\Tab.cs" />
+     <Compile Include="Assets\Scripts\LevelRenderer.cs" />
+     <Compile Include="Assets\Scripts\Level.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
