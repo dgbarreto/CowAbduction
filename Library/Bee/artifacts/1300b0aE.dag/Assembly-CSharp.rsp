@@ -390,6 +390,7 @@
 "Assets/Scripts/Player.cs"
 "Assets/Scripts/Replay.cs"
 "Assets/Scripts/Scenes.cs"
+"Assets/Scripts/SelectLevelPage.cs"
 "Assets/Scripts/StartPage.cs"
 "Assets/Scripts/TabButton.cs"
 "Assets/Scripts/TabGroup.cs"
