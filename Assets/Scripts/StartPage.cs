@@ -14,7 +14,7 @@ public class StartPage : MonoBehaviour
 
   public void StartGame()
   {
-    SceneManager.LoadScene(Scenes.LEVEL);
+    SceneManager.LoadScene(Scenes.SELECT_LEVEL);
   }
 
   public void OpenOptions()
