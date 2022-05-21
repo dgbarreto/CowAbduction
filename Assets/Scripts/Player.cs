@@ -22,7 +22,7 @@ public class Player : MonoBehaviour {
 
     void Update() {
         if (GameState.Shared().State == GameState.eGameState.Gaming) {
-            float moveX = Input.GetAxis("Horizontal") * Speed * Time.deltaTime;
+            float moveX = (Input.GetAxis("Horizontal") + Input.acceleration.x) * Speed * Time.deltaTime;
             transform.Translate(moveX, 0.0f, 0.0f);
         }
 

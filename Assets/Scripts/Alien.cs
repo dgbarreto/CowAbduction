@@ -67,9 +67,8 @@ public class Alien : MonoBehaviour {
         isColliding = true;
 
         if (collision.tag == OBSTACLE || collision.tag == WALL) {
-            //Destroy(gameObject);
-            //SceneManager.LoadScene(Scenes.LOSE);
-            parent.transform.Translate(-Input.GetAxis("Horizontal") * 200.0f * Time.deltaTime, 0.0f, 0.0f);
+            float moviementCoeficient = (Input.GetAxis("Horizontal") + Input.acceleration.x * 3);
+            parent.transform.Translate(-moviementCoeficient * 200.0f * Time.deltaTime, 0.0f, 0.0f);
 
             if (!isInvincible) {
                 animator.enabled = false;

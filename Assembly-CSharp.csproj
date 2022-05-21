@@ -61,10 +61,10 @@
     <Compile Include="Assets\Scripts\TabButton.cs" />
     <Compile Include="Assets\Scripts\Replay.cs" />
     <Compile Include="Assets\Scripts\TabGroup.cs" />
+    <Compile Include="Assets\Scripts\Life.cs" />
     <Compile Include="Assets\Scripts\Alien.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\GameState.cs" />
-    <Compile Include="Assets\Scripts\Life.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
