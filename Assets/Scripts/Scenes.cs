@@ -13,5 +13,6 @@ namespace Assets.Scripts
     public static readonly string LEVEL = "Level";
     public static readonly string START = "StartMenu";
     public static readonly string OPTIONS = "Options";
+    public static readonly string SELECT_LEVEL = "LevelSelector";
   }
 }
