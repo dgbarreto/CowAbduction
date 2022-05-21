@@ -9,7 +9,11 @@ PlayerSettings:
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
   defaultScreenOrientation: 3
+=======
+  defaultScreenOrientation: 4
+>>>>>>> 63b339775c0e46d3b95bec50cb97c470d6da73c0
 =======
   defaultScreenOrientation: 4
 >>>>>>> 63b339775c0e46d3b95bec50cb97c470d6da73c0
