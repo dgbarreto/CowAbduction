@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Level : MonoBehaviour
 {
+  public int levelIndex;
   public string sceneName;
   public string levelTitle;
   public Sprite levelImage;
