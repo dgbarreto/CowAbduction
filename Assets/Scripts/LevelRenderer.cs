@@ -20,7 +20,7 @@ public class LevelRenderer : MonoBehaviour
   {
     activeTitle = GetComponentInChildren<Text>();
     activeImage = GetComponentInChildren<Image>();
-    prevButton = GameObject.Find("GoToPrevious").GetComponent<Image>();
+    prevButton = GameObject.Find("GoToPrev").GetComponent<Image>();
     nextButton = GameObject.Find("GoToNext").GetComponent<Image>();
 
     if (firstLevel != null)
@@ -32,26 +32,22 @@ public class LevelRenderer : MonoBehaviour
 
   void Update()
   {
-    if (activeLevel.levelIndex <= 0)
+    if (activeLevel.levelIndex > 0)
     {
-      prevButton.color = new Color(prevButton.color.r, prevButton.color.g, prevButton.color.b, 0.5f);
-      prevButton.GetComponent<Button>().interactable = false;
+      prevButton.color = new Color(prevButton.color.r, prevButton.color.g, prevButton.color.b, 1f);
     }
     else
     {
-      prevButton.color = new Color(prevButton.color.r, prevButton.color.g, prevButton.color.b, 1f);
-      prevButton.GetComponent<Button>().interactable = true;
+      prevButton.color = new Color(prevButton.color.r, prevButton.color.g, prevButton.color.b, 0.5f);
     }
 
     if (activeLevel.levelIndex < levels.Count - 1)
     {
       nextButton.color = new Color(nextButton.color.r, nextButton.color.g, nextButton.color.b, 1f);
-      nextButton.GetComponent<Button>().interactable = true;
     }
     else
     {
       nextButton.color = new Color(nextButton.color.r, nextButton.color.g, nextButton.color.b, 0.5f);
-      nextButton.GetComponent<Button>().interactable = false;
     }
   }
 
