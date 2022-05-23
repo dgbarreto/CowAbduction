@@ -870,7 +870,7 @@ MonoBehaviour:
   m_text: Tentar Novamente
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 969a118ae6c90e6498c65e23449c907e, type: 2}
-  m_sharedMaterial: {fileID: -6690649959707461140, guid: 969a118ae6c90e6498c65e23449c907e, type: 2}
+  m_sharedMaterial: {fileID: 1755104784977660304, guid: 969a118ae6c90e6498c65e23449c907e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
