@@ -23,7 +23,7 @@ public class Replay : MonoBehaviour
     List<GameLevel> levels = GameState.Shared().AvailableLevels;
     if (actual.levelIndex < levels.Count - 1)
     {
-      goToLevel = levels[actual.levelIndex + 1];
+      GameLevel goToLevel = levels[actual.levelIndex + 1];
       GameState.Shared().ActualLevel = goToLevel;
       SceneManager.LoadScene(goToLevel.sceneName);
       return;
