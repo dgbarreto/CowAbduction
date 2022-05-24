@@ -1,3 +1,4 @@
+using Assets.Scripts.Levels;
 using Assets.Scripts;
 using System.Collections;
 using System.Collections.Generic;
@@ -13,11 +14,18 @@ public class Replay : MonoBehaviour
 
   public void ReplayLevel()
   {
-    SceneManager.LoadScene(Scenes.LEVEL);
+    SceneManager.LoadScene(GameState.Shared().ActualLevel.sceneName);
   }
 
   public void GoToNextLevel()
   {
-    SceneManager.LoadScene(Scenes.LEVEL);
+    GameLevel actual = GameState.Shared().ActualLevel;
+    List<GameLevel> levels = GameState.Shared().AvailableLevels;
+    if (actual.levelIndex < levels.Count - 1)
+    {
+      SceneManager.LoadScene(levels[actual.levelIndex + 1].sceneName);
+      return;
+    }
+    SceneManager.LoadScene(Scenes.SELECT_LEVEL);
   }
 }

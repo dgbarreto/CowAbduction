@@ -1,4 +1,5 @@
 using Assets.Scripts;
+using Assets.Scripts.Levels;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,9 +8,9 @@ using UnityEngine.SceneManagement;
 
 public class LevelRenderer : MonoBehaviour
 {
-  public List<Level> levels;
-  public Level firstLevel;
-  public Level activeLevel;
+  public List<GameLevel> levels;
+  public GameLevel firstLevel;
+  public GameLevel activeLevel;
   public Text activeTitle;
   public Image activeImage;
   public string activeScene;
@@ -27,6 +28,8 @@ public class LevelRenderer : MonoBehaviour
     {
       OnLevelSelected(firstLevel);
     }
+
+    GameState.Shared().AvailableLevels = levels;
   }
 
 
@@ -51,8 +54,9 @@ public class LevelRenderer : MonoBehaviour
     }
   }
 
-  public void OnLevelSelected(Level level)
+  public void OnLevelSelected(GameLevel level)
   {
+    GameState.Shared().ActualLevel = level;
     activeLevel = level;
     activeTitle.text = level.levelTitle;
     activeImage.sprite = level.levelImage;
