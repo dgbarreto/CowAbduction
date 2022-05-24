@@ -1,6 +1,7 @@
 using Assets.Scripts;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
@@ -10,6 +11,7 @@ public class Player : MonoBehaviour {
     private Animator openingAnimation;
     private GameObject alien;
     private Alien alienScript;
+    private bool isColliding = false;
 
     private void Start() {
         light = GetComponentInChildren<Light2D>();
@@ -21,7 +23,7 @@ public class Player : MonoBehaviour {
     }
 
     void Update() {
-        if (GameState.Shared().State == GameState.eGameState.Gaming) {
+        if (GameState.Shared().State == GameState.eGameState.Gaming && !isColliding) {
             float moveX = (Input.GetAxis("Horizontal") + Input.acceleration.x) * Speed * Time.deltaTime;
             transform.Translate(moveX, 0.0f, 0.0f);
         }
@@ -29,5 +31,13 @@ public class Player : MonoBehaviour {
         if (openingAnimation.GetCurrentAnimatorStateInfo(0).normalizedTime > 1) {
             GameState.Shared().State = GameState.eGameState.Gaming;
         }
+    }
+
+    private void OnTriggerExit2D() {
+        isColliding = false;
+    }
+
+    private void OnTriggerEnter2D() {
+        isColliding = true;
     }
 }
