@@ -1,24 +1,33 @@
+using Assets.Scripts.Levels;
 using Assets.Scripts;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Replay : MonoBehaviour {
-    // Start is called before the first frame update
-    void Start() {
+public class Replay : MonoBehaviour
+{
+  public void GoToStart()
+  {
+    SceneManager.LoadScene(Scenes.START);
+  }
 
-    }
+  public void ReplayLevel()
+  {
+    SceneManager.LoadScene(GameState.Shared().ActualLevel.sceneName);
+  }
 
-    // Update is called once per frame
-    void Update() {
+  public void GoToNextLevel()
+  {
+    GameLevel actual = GameState.Shared().ActualLevel;
+    List<GameLevel> levels = GameState.Shared().AvailableLevels;
+    if (actual.levelIndex < levels.Count - 1)
+    {
+      GameLevel goToLevel = levels[actual.levelIndex + 1];
+      GameState.Shared().ActualLevel = goToLevel;
+      SceneManager.LoadScene(goToLevel.sceneName);
+      return;
     }
-
-    public void ReplayGame() {
-        SceneManager.LoadScene(Scenes.START);
-    }
-
-    public void ReplayLevel() {
-        SceneManager.LoadScene(Scenes.LEVEL);
-    }
+    SceneManager.LoadScene(Scenes.SELECT_LEVEL);
+  }
 }
