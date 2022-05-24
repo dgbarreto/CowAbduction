@@ -39,6 +39,7 @@
      <Compile Include="Assets\Scripts\StartPage.cs" />
      <Compile Include="Assets\Scripts\Scenes.cs" />
      <Compile Include="Assets\Scripts\Replay.cs" />
+     <Compile Include="Assets\Scripts\GameLevel.cs" />
      <Compile Include="Assets\Scripts\Tab.cs" />
      <Compile Include="Assets\Scripts\LevelRenderer.cs" />
      <Compile Include="Assets\Scripts\TabGroup.cs" />
@@ -47,7 +48,6 @@
      <Compile Include="Assets\Scripts\Alien.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
      <Compile Include="Assets\Scripts\GameState.cs" />
-     <Compile Include="Assets\Scripts\GameLevel.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
