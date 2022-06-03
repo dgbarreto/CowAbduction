@@ -22,7 +22,7 @@ public class Alien : MonoBehaviour {
     public bool isColliding = false;
     //public float moveX;
     private GameObject parent;
-    private AudioSource audioHit;
+    private AudioSource audioHit, audioSnooze, audioTransform;
     private bool isInvincible = false;
 
     void Start() {
@@ -33,9 +33,14 @@ public class Alien : MonoBehaviour {
         spriteRenderer = GetComponent<SpriteRenderer>();
         parent = this.transform.parent.gameObject;
         t = this.transform.parent.gameObject.GetComponent<Transform>();
+        audioSnooze = GetComponents<AudioSource>()[0];
         audioHit = GetComponents<AudioSource>()[1];
+        audioTransform = GetComponents<AudioSource>()[2];
 
         rb.gravityScale = 0;
+
+        print(animator.GetBool("isAbducting"));
+        print(animator.GetBool("isTransforming"));
     }
 
     // Update is called once per frame
@@ -110,13 +115,24 @@ public class Alien : MonoBehaviour {
 
     private void removeOneLifePoint() {
         GameObject lifeGauge = GameObject.Find("Life");
-        if(lifeGauge != null) {
+         if(lifeGauge != null) {
             Life lifeScript = lifeGauge.GetComponent<Life>();
             if (!lifeScript.removeOneLifePoint()) {
-                Destroy(gameObject);
-                SceneManager.LoadScene("Lose");
+                print("GameOver");
+                this.Gravity = 0.0f;
+                transform.Translate(0.0f, 0.0f, 0.0f);
+                animator.SetBool("isTransforming", true);
+                audioSnooze.Stop();
+                audioTransform.Play();
+                StartCoroutine(GameOver());
             }
         }
+    }
+
+    IEnumerator GameOver() {
+        yield return new WaitForSeconds(3.0f);
+        Destroy(gameObject);
+        SceneManager.LoadScene("Lose");
     }
 
     IEnumerator BlinkGameObject(float seconds) {

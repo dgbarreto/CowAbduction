@@ -12,7 +12,7 @@ namespace Assets.Scripts
   internal sealed class GameState
   {
     private static GameState _instance;
-    private int _lives = 3;
+    private int _lives = 0;
     private GameLevel _actualLevel;
     private List<GameLevel> _availableLevels;
 
